@@ -1,6 +1,8 @@
-import { mockData } from "~/server/db/mock-data";
+import { db } from "~/server/db";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany({});
+
   return (
     <main className="flex h-screen justify-center bg-gradient-to-br from-neutral-200 via-sky-100 to-gray-100">
       <div className="h-full w-full border-x border-slate-400 md:max-w-2xl">
@@ -23,10 +25,11 @@ export default function HomePage() {
           </form>
 
           <ul className="mx-auto grid w-fit grid-cols-2 gap-x-40 gap-y-5 pt-5">
-            {mockData.map((post) => (
-              <li key={post.id} className="border-b border-black">
-                <h2 className="text-lg font-bold">{post.title}</h2>
-                <p>{post.content}</p>
+            {posts.map((post) => (
+              <li key={post.id} className="rounded border border-gray-300 p-2">
+                <h2 className="text-xl font-bold">{post.name}</h2>
+                <p>{post.licensePlate}</p>
+                <p>{post.description}</p>
               </li>
             ))}
           </ul>
