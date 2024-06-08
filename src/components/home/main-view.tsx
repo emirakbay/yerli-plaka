@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import LicensePlateInput from "../license-plate-input";
 import LicensePlatePost from "../license-plate-post";
 
-export default async function MainView() {
+export default function MainView() {
   return (
     <div className="h-full w-full border-x border-slate-400 md:max-w-3xl">
       <div>
@@ -11,7 +11,7 @@ export default async function MainView() {
         <p className="text-center text-sm text-gray-500">
           Yerli plaka numarası sorgulama
         </p>
-        <Tabs defaultValue="music" className="pt-5">
+        <Tabs defaultValue="entry" className="pt-5">
           <div className="space-between flex items-center">
             <TabsList className="mx-auto w-fit">
               <TabsTrigger value="more">
