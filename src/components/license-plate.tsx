@@ -28,15 +28,15 @@ export default function LicensePlate(props: {
         </div>
       </div>
       <div className="mx-auto flex w-fit flex-col rounded-md bg-slate-500 p-2 text-white">
-        <span className="self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm mr-auto">
+        <span className="mr-auto self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm">
           {"İsim : "}
           {props.post.name}
         </span>
-        <span className="self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm">
+        <span className="mr-auto self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm">
           {"Açıklama : "}
           {props.post.description}
         </span>
-        <span className="self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm mr-auto">
+        <span className="mr-auto self-end text-2xl font-bold max-sm:pt-6 max-sm:text-sm">
           {props.post.createdAt.toLocaleTimeString()}
         </span>
         <div />
