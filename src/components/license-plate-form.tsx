@@ -27,6 +27,7 @@ export default function LicensePlateForm(props: LicensePlateFormProps) {
               <div className="center relative flex w-[275px] flex-grow items-center justify-center bg-white">
                 <div className="flex flex-row font-bold">
                   <Input
+                    required
                     id="license-plate"
                     placeholder="99 X 9999"
                     pattern="^(0[1-9]|[1-7][0-9]|8[0-1])(([A-PR-VYZ]{1})(?!0{4,5}$)\d{4,5}|([A-PR-VYZ]{2})(?!0{3,4}$)\d{3,4}|([A-PR-VYZ]{3})(?!0{2,3}$)\d{2,3})$"
@@ -40,11 +41,17 @@ export default function LicensePlateForm(props: LicensePlateFormProps) {
           <CardContent className="grid gap-6">
             <div className="grid gap-2">
               <Label htmlFor="name">İsim</Label>
-              <Input id="name" placeholder="İsim giriniz." name="name" />
+              <Input
+                id="name"
+                placeholder="İsim giriniz."
+                name="name"
+                required
+              />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="description">Açıklama</Label>
               <Textarea
+                required
                 name="description"
                 id="description"
                 placeholder="Lütfen araç hakkında bilgi veriniz."
