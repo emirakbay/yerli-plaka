@@ -3,7 +3,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import LicensePlateInput from "../license-plate-input";
 import LicensePlatePost from "../license-plate-post";
 
-export default function MainView() {
+interface MainViewProps {
+  searchParam: Record<string, string | string[] | undefined>;
+}
+
+export default function MainView(props: MainViewProps) {
   return (
     <div className="h-full w-full border-x border-slate-400 md:max-w-3xl">
       <div>
@@ -53,7 +57,7 @@ export default function MainView() {
             </TabsList>
           </div>
           <TabsContent value="feed" className="border-none p-0 outline-none">
-            <LicensePlatePost />
+            <LicensePlatePost searchParams={props.searchParam} />
           </TabsContent>
           <TabsContent
             value="entry"

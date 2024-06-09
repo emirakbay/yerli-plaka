@@ -6,7 +6,7 @@ export default function LicensePlateSubmit() {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" disabled={pending}>
-      {pending ? "Submitting..." : "Submit"}
+      {pending ? "Kaydediliyor..." : "Kaydet"}
     </Button>
   );
 }
